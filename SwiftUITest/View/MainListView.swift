@@ -26,4 +26,4 @@ struct MainListView_Previews: PreviewProvider {
         MainListView()
             .environmentObject(MemoStore())
     }
-}
+} 
