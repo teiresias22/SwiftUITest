@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75751CF029225A3500538704 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75751CEF29225A3500538704 /* MainListView.swift */; };
 		7581333F291BB91D00E8DEF3 /* SwiftUITestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7581333E291BB91D00E8DEF3 /* SwiftUITestApp.swift */; };
-		75813341291BB91D00E8DEF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75813340291BB91D00E8DEF3 /* ContentView.swift */; };
 		75813343291BB91E00E8DEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75813342291BB91E00E8DEF3 /* Assets.xcassets */; };
 		75813346291BB91E00E8DEF3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75813345291BB91E00E8DEF3 /* Preview Assets.xcassets */; };
 		75813348291BB91E00E8DEF3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75813347291BB91E00E8DEF3 /* Persistence.swift */; };
@@ -36,9 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75751CEF29225A3500538704 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
 		7581333B291BB91D00E8DEF3 /* SwiftUITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7581333E291BB91D00E8DEF3 /* SwiftUITestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestApp.swift; sourceTree = "<group>"; };
-		75813340291BB91D00E8DEF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		75813342291BB91E00E8DEF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75813345291BB91E00E8DEF3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		75813347291BB91E00E8DEF3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -75,6 +75,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75751CF129225A5400538704 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				75813347291BB91E00E8DEF3 /* Persistence.swift */,
+				75813349291BB91E00E8DEF3 /* SwiftUITest.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		75751CF229225A5C00538704 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
 		75813332291BB91D00E8DEF3 = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +114,11 @@
 		7581333D291BB91D00E8DEF3 /* SwiftUITest */ = {
 			isa = PBXGroup;
 			children = (
+				75751CF229225A5C00538704 /* Memory */,
+				75751CF129225A5400538704 /* CoreData */,
 				7581333E291BB91D00E8DEF3 /* SwiftUITestApp.swift */,
-				75813340291BB91D00E8DEF3 /* ContentView.swift */,
+				75751CEF29225A3500538704 /* MainListView.swift */,
 				75813342291BB91E00E8DEF3 /* Assets.xcassets */,
-				75813347291BB91E00E8DEF3 /* Persistence.swift */,
-				75813349291BB91E00E8DEF3 /* SwiftUITest.xcdatamodeld */,
 				75813344291BB91E00E8DEF3 /* Preview Content */,
 			);
 			path = SwiftUITest;
@@ -264,7 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75813348291BB91E00E8DEF3 /* Persistence.swift in Sources */,
-				75813341291BB91D00E8DEF3 /* ContentView.swift in Sources */,
+				75751CF029225A3500538704 /* MainListView.swift in Sources */,
 				7581333F291BB91D00E8DEF3 /* SwiftUITestApp.swift in Sources */,
 				7581334B291BB91E00E8DEF3 /* SwiftUITest.xcdatamodeld in Sources */,
 			);
@@ -423,7 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 22110801;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUITest/Preview Content\"";
 				DEVELOPMENT_TEAM = 83R5US8PK8;
 				ENABLE_PREVIEWS = YES;
@@ -433,11 +449,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.joonhwan.SwiftUITest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -452,7 +469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 22110801;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUITest/Preview Content\"";
 				DEVELOPMENT_TEAM = 83R5US8PK8;
 				ENABLE_PREVIEWS = YES;
@@ -462,11 +479,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.joonhwan.SwiftUITest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
