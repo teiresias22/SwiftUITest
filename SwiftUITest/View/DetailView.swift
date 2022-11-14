@@ -12,32 +12,50 @@ struct DetailView: View {
     
     @EnvironmentObject var store: MemoStore
     
+    @State private var showComposer = false
+    
     var body: some View {
-        VStack {
-            ScrollView {
-                VStack {
-                    HStack {
-                        Text(memo.content)
-                            .padding()
+        NavigationView {
+            VStack {
+                ScrollView {
+                    VStack {
+                        HStack {
+                            Text(memo.content)
+                                .padding()
+                            
+                            Spacer(minLength: 0)
+                        }
                         
-                        Spacer(minLength: 0)
+                        Text(memo.insertDate, style: .date)
+                            .padding()
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
                     }
-                    
-                    Text(memo.insertDate, style: .date)
-                        .padding()
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
                 }
             }
+            .navigationTitle("메모 상세")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button {
+                        showComposer = true
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                    }
+                }
+            }
+            .sheet(isPresented: $showComposer) {
+                ComposeView(memo: memo)
+            }
         }
-        .navigationTitle("메모 상세")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(memo: Memo(content: "Hello"))
-            .environmentObject(MemoStore())
+        NavigationView {
+            DetailView(memo: Memo(content: "Hello"))
+                .environmentObject(MemoStore())
+        }
     }
 }
